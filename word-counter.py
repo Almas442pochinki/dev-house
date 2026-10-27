@@ -27,6 +27,9 @@ def top_ten_words(words: list[str]) -> list[tuple[str, int]]:
     print(word_count.keys())
     return sorted_words[:10]
 
+def unique_words(words: list[str]) -> set[str]:
+    return set(words)
+
 def main():
     words = read_file(file_name)
     print(f"Number of words in the file: {len(words)}")
@@ -36,6 +39,8 @@ def main():
     print("Top 10 words by frequency:")
     for word, count in top_words:
         print(f"{word}: {count}")
+    unique = unique_words(words)
+    print(f"number of unique words: {len(unique)}")
 
 if __name__ == "__main__":
     main()
